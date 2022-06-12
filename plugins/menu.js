@@ -20,7 +20,7 @@ const defaultMenu = {
 │ ✾ Level: %level
 │ ✾ Role: %role
 ╰❑
-╭─❑ 「 INFORMASI 」 ❑──
+╭─❑ 「 INFORMATION 」 ❑──
 │ Bot ini masih tahap beta
 │ apabila ada bug/eror harap
 │ lapor ke owner
@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-  'main': 'MENU UTAMA',
+  'main': 'MENU MAIN',
   'game': 'MENU GAME',
   'rpg': 'MENU RPG',
   'xp': 'MENU EXP',
@@ -81,8 +81,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
   }
-  if (teks == 'grup') tags = {
-    'group': 'Grup'
+  if (teks == 'group') tags = {
+    'group': 'Group'
   }
   if (teks == 'premium') tags = {
     'premium': 'Premium'
