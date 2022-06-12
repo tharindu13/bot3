@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
-  if (!args[0]) throw 'Uhm...url nya mana?'
+  if (!args[0]) throw 'link eka ko yako?'
   let res = await fetch(global.API('xteam', '/dl/tiktok', {
     url: args[0]
   }, 'APIKEY'))
