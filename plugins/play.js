@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
-  if (!vid) throw 'Konten Tidak ditemukan'
+  if (!vid) throw 'Content Not found'
   let isVideo = /2$/.test(command)
   let yt = false
   let yt2 = false
@@ -25,13 +25,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
     }
   }
-  if (yt === false) throw 'semua server gagal'
-  if (yt2 === false) throw 'semua server gagal'
+  if (yt === false) throw 'all servers fail'
+  if (yt2 === false) throw 'all servers fail'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
 let anu =  `
-*Judul:* ${title}
-*Ukuran File Audio:* ${filesizeF}
-*Ukuran File Video:* ${yt2.filesizeF}
+*Title:* ${title}
+*Audio File Size:* ${filesizeF}
+*Video File Size:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
 *link sumber:* 
 ${vid.url}
@@ -46,7 +46,7 @@ ${vid.url}
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'DONASI',
+               displayText: 'DONATION',
                url: 'https://saweria.co/ilmanhdyt',
              }
 
@@ -75,7 +75,7 @@ ${vid.url}
          { messageId: template.key.id }
      )
 }
-handler.help = ['play'].map(v => v + ' <pencarian>')
+handler.help = ['play'].map(v => v + ' <search>')
 handler.tags = ['downloader']
 handler.command = /^(p|play)$/i
 
